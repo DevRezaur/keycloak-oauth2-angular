@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { OAuthEvent, OAuthService } from 'angular-oauth2-oidc';
 import { User } from '../model/user';
 import { RestApiService } from '../service/rest-api.service';
 import { SsoService } from '../service/sso.service';
@@ -10,7 +10,6 @@ import { SsoService } from '../service/sso.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  private refresh$ = new BehaviorSubject<boolean>(true);
   public users: User[] = [];
 
   constructor(
@@ -19,7 +18,15 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.refresh$.subscribe((_) => this.getAllUser());
+    this.ssoService.getOAuthEvent().subscribe(({ type }: OAuthEvent) => {
+      switch (type) {
+        case 'token_received':
+          this.getAllUser();
+          break;
+      }
+    });
+
+    if (this.ssoService.accessToken) this.getAllUser();
   }
 
   public get username() {

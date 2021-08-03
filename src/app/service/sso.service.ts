@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import {
   AuthConfig,
   NullValidationHandler,
+  OAuthEvent,
   OAuthService,
 } from 'angular-oauth2-oidc';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -28,6 +30,10 @@ export class SsoService {
     disableAtHashCheck: true,
     showDebugInformation: true,
   };
+
+  public getOAuthEvent(): Observable<OAuthEvent> {
+    return this.oauthService.events;
+  }
 
   public setupAutomaticSilentRefresh() {
     this.oauthService.setupAutomaticSilentRefresh();
@@ -59,7 +65,7 @@ export class SsoService {
   }
 
   public login() {
-    this.oauthService.initLoginFlow();
+    this.oauthService.initCodeFlow();
   }
 
   public logout() {

@@ -19,7 +19,7 @@ export class LandingPageComponent implements OnInit {
     this.ssoService.logout();
   }
 
-  public isLoggedIn(): boolean {
+  public isLoggedIn() {
     return this.ssoService.isLoggedIn();
   }
 }
