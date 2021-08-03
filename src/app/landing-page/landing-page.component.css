@@ -1,0 +1,33 @@
+.landing-page-container {
+  background-color: #f1f1f1;
+  color: #252525;
+  min-height: 100vh;
+  padding: 50px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: block;
+  background-color: #fff;
+  width: 100%;
+  max-width: 550px;
+  padding: 50px 25px;
+  border: 1px solid #252525;
+  border-radius: 4px;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  margin: -125px auto 50px auto;
+}
+
+.card .button {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 200px;
+}

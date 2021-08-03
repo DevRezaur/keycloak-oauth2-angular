@@ -1,0 +1,75 @@
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" routerLink="/">Angular App</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mt-2 mb-3 my-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Page 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Page 2</a>
+        </li>
+      </ul>
+      <p class="text-light d-none d-lg-block pe-4 mb-0">
+        Welcome, {{ username }}
+      </p>
+      <button type="button" class="button" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+<!-- Navbar End -->
+
+<!-- Main Container Start -->
+<!-- <div class="container main-container">
+  <div *ngFor="let user of users">
+    <p>{{ user.fullname }}</p>
+  </div>
+</div> -->
+
+<section class="container user-section">
+  <div class="no-user" *ngIf="users.length == 0">
+    <h3>No User Found in Database</h3>
+    <img src="../../assets/image/no-data.svg" alt="No Data" />
+  </div>
+  <div class="user-grid">
+    <div *ngFor="let user of users">
+      <div class="user-card">
+        <div class="top-div">
+          <img src="../../assets/image/avatar1.png" alt="User Image" />
+          <p class="nickname">{{ user?.fullname }}</p>
+        </div>
+        <div class="mid-div">
+          <div class="user-info">
+            <p>User Id:</p>
+            <p>{{ user?.id }}</p>
+          </div>
+          <div class="user-info">
+            <p>Nickname:</p>
+            <p>{{ user?.nickname }}</p>
+          </div>
+          <div class="user-info">
+            <p>Contact:</p>
+            <p>{{ user?.contact }}</p>
+          </div>
+          <div class="user-info">
+            <p>Email:</p>
+            <p>{{ user?.email }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Main Container End -->

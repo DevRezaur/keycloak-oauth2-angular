@@ -1,0 +1,21 @@
+<div class="landing-page-container">
+  <div class="card">
+    <img src="../../assets/image/login.svg" alt="login.svg" />
+    <button
+      *ngIf="!isLoggedIn()"
+      class="button"
+      type="button"
+      (click)="login()"
+    >
+      Login
+    </button>
+    <button
+      *ngIf="isLoggedIn()"
+      class="button"
+      type="button"
+      (click)="logout()"
+    >
+      Logout
+    </button>
+  </div>
+</div>

@@ -1,0 +1,122 @@
+.navbar {
+  padding: 15px 25px;
+  background-color: #192136;
+}
+
+.user-section {
+  padding: 50px 25px 100px 25px;
+}
+
+.no-user h3 {
+  text-align: center;
+  margin: 50px 15px;
+}
+
+.no-user img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 50px;
+  column-gap: 25px;
+}
+
+.user-card {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+}
+
+.user-card .top-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  background-color: #192136;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.user-card .top-div img {
+  max-width: 75px;
+  height: 75px;
+  border-radius: 40px;
+  background-color: #fff;
+}
+
+.user-card .top-div p {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.user-card .top-div .name-div .nickname {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 0px;
+}
+
+.user-card .mid-div {
+  padding: 25px 15px 50px 15px;
+}
+
+.user-card .user-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 5px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgb(150, 150, 150);
+}
+
+.user-card .user-info p {
+  margin-bottom: 5px;
+  padding-left: 3px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: rgb(75, 75, 75);
+}
+
+.user-card .user-info p:first-of-type {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(25, 25, 25);
+}
+
+@media screen and (min-width: 750px) {
+  .user-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .user-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .user-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}

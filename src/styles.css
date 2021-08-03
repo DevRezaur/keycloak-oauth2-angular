@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Global Styles */
+
+.button {
+  display: inline-block;
+  background-color: #6c63ff;
+  color: #fff;
+  min-width: 100px;
+  height: 32px;
+  padding: 0 15px;
+  border: none;
+  outline: none;
+  font-weight: 600;
+}
+
+.button:hover {
+  background-color: #0077ff;
+}
