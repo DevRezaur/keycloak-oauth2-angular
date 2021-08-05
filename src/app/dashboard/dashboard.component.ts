@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { OAuthEvent, OAuthService } from 'angular-oauth2-oidc';
 import { User } from '../model/user';
 import { RestApiService } from '../service/rest-api.service';
-import { SsoService } from '../service/sso.service';
+import { SsoService } from '../service/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,15 +17,7 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.ssoService.getOAuthEvent().subscribe(({ type }: OAuthEvent) => {
-      switch (type) {
-        case 'token_received':
-          this.getAllUser();
-          break;
-      }
-    });
-
-    if (this.ssoService.accessToken) this.getAllUser();
+    this.getAllUser();
   }
 
   public get username() {
@@ -39,7 +30,7 @@ export class DashboardComponent implements OnInit {
         this.users = response;
       },
       (error) => {
-        console.log(error);
+        alert('Failed To Get All User');
       }
     );
   }

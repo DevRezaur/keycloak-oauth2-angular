@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SsoService } from './service/sso.service';
+import { SsoService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,5 @@ import { SsoService } from './service/sso.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private ssoService: SsoService) {
-    this.ssoService.configure();
-    this.ssoService.setupAutomaticSilentRefresh();
-  }
+  constructor(private ssoService: SsoService) {}
 }

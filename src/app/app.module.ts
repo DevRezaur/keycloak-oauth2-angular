@@ -6,9 +6,15 @@ import { AppComponent } from './app.component';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { CallbackComponent } from './callback/callback.component';
 
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent, DashboardComponent],
+  declarations: [
+    AppComponent,
+    LandingPageComponent,
+    DashboardComponent,
+    CallbackComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

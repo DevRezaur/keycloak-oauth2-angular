@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SsoService } from '../service/sso.service';
+import { SsoService } from '../service/auth.service';
 
 @Component({
   selector: 'app-landing-page',
