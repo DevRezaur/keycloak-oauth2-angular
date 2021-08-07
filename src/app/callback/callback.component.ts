@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SsoService } from '../service/auth.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-callback',
@@ -7,9 +7,9 @@ import { SsoService } from '../service/auth.service';
   styleUrls: ['./callback.component.css'],
 })
 export class CallbackComponent implements OnInit {
-  constructor(private ssoService: SsoService) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.ssoService.redirectOnCallback();
+    this.authService.redirectOnCallback();
   }
 }

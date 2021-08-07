@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model/user';
+import { AuthService } from '../service/auth.service';
 import { RestApiService } from '../service/rest-api.service';
-import { SsoService } from '../service/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private restApi: RestApiService,
-    private ssoService: SsoService
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   }
 
   public get username() {
-    return this.ssoService.username;
+    return this.authService.username;
   }
 
   public getAllUser() {
@@ -36,6 +36,6 @@ export class DashboardComponent implements OnInit {
   }
 
   public logout() {
-    this.ssoService.logout();
+    this.authService.logout();
   }
 }

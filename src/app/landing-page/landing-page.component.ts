@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SsoService } from '../service/auth.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,19 +7,19 @@ import { SsoService } from '../service/auth.service';
   styleUrls: ['./landing-page.component.css'],
 })
 export class LandingPageComponent implements OnInit {
-  constructor(private ssoService: SsoService) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
   public login() {
-    this.ssoService.login();
+    this.authService.login();
   }
 
   public logout() {
-    this.ssoService.logout();
+    this.authService.logout();
   }
 
   public isLoggedIn() {
-    return this.ssoService.isLoggedIn();
+    return this.authService.isLoggedIn();
   }
 }

@@ -14,7 +14,7 @@ import { filter } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class SsoService {
+export class AuthService {
   constructor(private oauthService: OAuthService, private router: Router) {
     this.configure();
 
@@ -27,7 +27,7 @@ export class SsoService {
   }
 
   private authConfig: AuthConfig = {
-    issuer: 'http://localhost:8080/auth/realms/auth-practice',
+    issuer: 'http://localhost:8080/auth/realms/oauth2-test',
     redirectUri: window.location.origin + '/callback',
     postLogoutRedirectUri: 'http://localhost:4200/',
     clientId: 'angular-frontend',
