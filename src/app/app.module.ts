@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OAuthModule } from 'angular-oauth2-oidc';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CallbackComponent } from './callback/callback.component';
 
@@ -12,7 +12,7 @@ import { CallbackComponent } from './callback/callback.component';
   declarations: [
     AppComponent,
     LandingPageComponent,
-    DashboardComponent,
+    AdminDashboardComponent,
     CallbackComponent,
   ],
   imports: [

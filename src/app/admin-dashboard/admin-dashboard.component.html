@@ -32,13 +32,8 @@
 <!-- Navbar End -->
 
 <!-- Main Container Start -->
-<!-- <div class="container main-container">
-  <div *ngFor="let user of users">
-    <p>{{ user.fullname }}</p>
-  </div>
-</div> -->
-
 <section class="container user-section">
+  <p>{{ userId }}</p>
   <div class="no-user" *ngIf="users.length == 0">
     <h3>No User Found in Database</h3>
     <img src="../../assets/image/no-data.svg" alt="No Data" />

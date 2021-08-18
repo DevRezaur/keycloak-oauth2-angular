@@ -4,11 +4,11 @@ import { AuthService } from '../service/auth.service';
 import { RestApiService } from '../service/rest-api.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'],
+  selector: 'app-admin-dashboard',
+  templateUrl: './admin-dashboard.component.html',
+  styleUrls: ['./admin-dashboard.component.css'],
 })
-export class DashboardComponent implements OnInit {
+export class AdminDashboardComponent implements OnInit {
   public users: User[] = [];
 
   constructor(
@@ -22,6 +22,10 @@ export class DashboardComponent implements OnInit {
 
   public get username() {
     return this.authService.username;
+  }
+
+  public get userId() {
+    return this.authService.userId;
   }
 
   public getAllUser() {

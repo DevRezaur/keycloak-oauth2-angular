@@ -53,8 +53,12 @@ export class AuthService {
       if (event instanceof OAuthErrorEvent) {
         console.error(event);
       } else if (event instanceof OAuthSuccessEvent) {
-        if (event.type === 'token_received') {
-          this.router.navigateByUrl('/dashboard');
+        if (
+          event.type === 'token_received' &&
+          window.location.href === 'http://localhost:4200/callback'
+        ) {
+          if (this.isAdmin()) this.router.navigateByUrl('/admin/dashboard');
+          else if (this.isUser()) this.router.navigateByUrl('/home');
         }
       } else {
         console.warn(event);
@@ -77,9 +81,22 @@ export class AuthService {
     return this.oauthService.hasValidIdToken();
   }
 
+  public isAdmin(): boolean {
+    return this.getClaims().includes('realm-admin') ? true : false;
+  }
+
+  public isUser(): boolean {
+    return this.getClaims().includes('realm-user') ? true : false;
+  }
+
   public get username() {
     let claims: any = this.oauthService.getIdentityClaims();
     return claims ? claims.preferred_username : '';
+  }
+
+  public get userId() {
+    let claims: any = this.oauthService.getIdentityClaims();
+    return claims ? claims.sub : '';
   }
 
   public get idToken() {
