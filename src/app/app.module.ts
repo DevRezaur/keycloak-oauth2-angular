@@ -7,6 +7,7 @@ import { OAuthModule } from 'angular-oauth2-oidc';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CallbackComponent } from './callback/callback.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { CallbackComponent } from './callback/callback.component';
     LandingPageComponent,
     AdminDashboardComponent,
     CallbackComponent,
+    UserDashboardComponent,
   ],
   imports: [
     BrowserModule,

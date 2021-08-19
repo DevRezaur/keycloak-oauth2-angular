@@ -33,38 +33,13 @@
 
 <!-- Main Container Start -->
 <section class="container user-section">
+  <h2 class="page-title">User Dashboard</h2>
   <p class="user-id">Keycloak User ID: {{ userId }}</p>
-  <div class="no-user" *ngIf="users.length == 0">
-    <h3>No User Found in Database</h3>
-    <img src="../../assets/image/no-data.svg" alt="No Data" />
-  </div>
-  <div class="user-grid">
-    <div *ngFor="let user of users">
-      <div class="user-card">
-        <div class="top-div">
-          <img src="../../assets/image/avatar1.png" alt="User Image" />
-          <p class="nickname">{{ user?.fullname }}</p>
-        </div>
-        <div class="mid-div">
-          <div class="user-info">
-            <p>User Id:</p>
-            <p>{{ user?.id }}</p>
-          </div>
-          <div class="user-info">
-            <p>Nickname:</p>
-            <p>{{ user?.nickname }}</p>
-          </div>
-          <div class="user-info">
-            <p>Contact:</p>
-            <p>{{ user?.contact }}</p>
-          </div>
-          <div class="user-info">
-            <p>Email:</p>
-            <p>{{ user?.email }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+  <p>{{ user?.id }}</p>
+  <p>{{ user?.fullname }}</p>
+  <p>{{ user?.nickname }}</p>
+  <p>{{ user?.contact }}</p>
+  <p>{{ user?.email }}</p>
 </section>
 <!-- Main Container End -->

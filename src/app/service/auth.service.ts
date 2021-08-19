@@ -58,7 +58,7 @@ export class AuthService {
           window.location.href === 'http://localhost:4200/callback'
         ) {
           if (this.isAdmin()) this.router.navigateByUrl('/admin/dashboard');
-          else if (this.isUser()) this.router.navigateByUrl('/home');
+          else if (this.isUser()) this.router.navigateByUrl('/user/dashboard');
         }
       } else {
         console.warn(event);

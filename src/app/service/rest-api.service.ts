@@ -15,7 +15,7 @@ export class RestApiService {
     return this.http.get<User[]>(`${this.readUserUrl}/all`);
   }
 
-  public getUser(id: number | null): Observable<User> {
-    return this.http.get<User>(`${this.readUserUrl}/${id}`);
+  public getUserData(id: string): Observable<User | null> {
+    return this.http.post<User>(`${this.readUserUrl}/profile`, { id: id });
   }
 }

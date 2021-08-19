@@ -1,0 +1,22 @@
+.navbar {
+  padding: 15px 25px;
+  background-color: #192136;
+}
+
+.user-section {
+  padding: 50px 25px 100px 25px;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.user-id {
+  width: fit-content;
+  text-align: center;
+  font-size: 20px;
+  margin: 0 auto 50px auto;
+  padding: 5px 25px;
+  background-color: #192136;
+  color: #fff;
+}
